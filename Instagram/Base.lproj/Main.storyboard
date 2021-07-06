@@ -11,8 +11,8 @@
         <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -103,7 +103,13 @@
                         <viewLayoutGuide key="safeArea" id="8oF-qZ-svL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="BHg-WM-ina"/>
+                    <navigationItem key="navigationItem" title="Instagram" id="BHg-WM-ina">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="Wus-Cz-ZCV">
+                            <connections>
+                                <action selector="didTapLogout:" destination="aw5-8z-qhG" id="u6V-6r-0KV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lD1-BS-LtE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -112,7 +118,7 @@
         <!--Navigation Controller-->
         <scene sceneID="coy-ch-QMa">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R3A-m0-dFS" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="HomeNavigationController" storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="R3A-m0-dFS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="rTc-ik-qfE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hcC-dN-PYW">
