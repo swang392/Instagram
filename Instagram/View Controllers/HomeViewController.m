@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "SceneDelegate.h"
 #import "PostCell.h"
+#import "PostDetailsViewController.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -83,14 +84,17 @@
     [self queryPosts];
     [refreshControl endRefreshing];
 }
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    PostDetailsViewController *postDetailsViewController = [segue destinationViewController];
+    postDetailsViewController.post = self.posts[indexPath.row];
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end
