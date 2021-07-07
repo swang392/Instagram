@@ -93,6 +93,7 @@
             NSLog(@"Error posting: %@", error.localizedDescription);
         }
     }];;
+    [self.navigationController popViewControllerAnimated:TRUE];
 }
 
 - (IBAction)onCancel:(id)sender {
