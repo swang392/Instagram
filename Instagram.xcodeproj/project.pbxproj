@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3F114691269500BE0050E998 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F114690269500BE0050E998 /* LoginViewController.m */; };
 		3F114694269502430050E998 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F114693269502430050E998 /* HomeViewController.m */; };
+		3F114697269639FA0050E998 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F114696269639FA0050E998 /* ComposeViewController.m */; };
+		3F11469B269640650050E998 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F11469A269640650050E998 /* Post.m */; };
+		3F11469F26964E2F0050E998 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F11469E26964E2F0050E998 /* PostCell.m */; };
 		3F94E3CA2694EB1900C07D3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F94E3C92694EB1900C07D3D /* AppDelegate.m */; };
 		3F94E3CD2694EB1900C07D3D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F94E3CC2694EB1900C07D3D /* SceneDelegate.m */; };
 		3F94E3D32694EB1900C07D3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F94E3D12694EB1900C07D3D /* Main.storyboard */; };
@@ -46,6 +49,12 @@
 		3F114690269500BE0050E998 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		3F114692269502430050E998 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		3F114693269502430050E998 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		3F114695269639FA0050E998 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		3F114696269639FA0050E998 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		3F114699269640650050E998 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		3F11469A269640650050E998 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		3F11469D26964E2F0050E998 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		3F11469E26964E2F0050E998 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		3F94E3C52694EB1900C07D3D /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F94E3C82694EB1900C07D3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3F94E3C92694EB1900C07D3D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -106,8 +115,28 @@
 				3F114690269500BE0050E998 /* LoginViewController.m */,
 				3F114692269502430050E998 /* HomeViewController.h */,
 				3F114693269502430050E998 /* HomeViewController.m */,
+				3F114695269639FA0050E998 /* ComposeViewController.h */,
+				3F114696269639FA0050E998 /* ComposeViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3F114698269640430050E998 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3F114699269640650050E998 /* Post.h */,
+				3F11469A269640650050E998 /* Post.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3F11469C26964E180050E998 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3F11469D26964E2F0050E998 /* PostCell.h */,
+				3F11469E26964E2F0050E998 /* PostCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		3F94E3BC2694EB1900C07D3D = {
@@ -135,6 +164,8 @@
 		3F94E3C72694EB1900C07D3D /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				3F11469C26964E180050E998 /* Views */,
+				3F114698269640430050E998 /* Models */,
 				3F11468E269500A90050E998 /* View Controllers */,
 				3F94E3C82694EB1900C07D3D /* AppDelegate.h */,
 				3F94E3C92694EB1900C07D3D /* AppDelegate.m */,
@@ -430,8 +461,11 @@
 				3F94E3CA2694EB1900C07D3D /* AppDelegate.m in Sources */,
 				3F94E3DB2694EB1B00C07D3D /* main.m in Sources */,
 				3F94E3CD2694EB1900C07D3D /* SceneDelegate.m in Sources */,
+				3F11469F26964E2F0050E998 /* PostCell.m in Sources */,
+				3F114697269639FA0050E998 /* ComposeViewController.m in Sources */,
 				3F114694269502430050E998 /* HomeViewController.m in Sources */,
 				3F114691269500BE0050E998 /* LoginViewController.m in Sources */,
+				3F11469B269640650050E998 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
