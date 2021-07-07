@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *posts;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -26,6 +27,10 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    self.refreshControl = [UIRefreshControl new];
+    [self.refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
     
     [self queryPosts];
     
@@ -74,6 +79,10 @@
     }];
 }
 
+- (void)refreshData:(UIRefreshControl *)refreshControl {
+    [self queryPosts];
+    [refreshControl endRefreshing];
+}
 /*
 #pragma mark - Navigation
 
