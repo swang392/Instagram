@@ -59,7 +59,7 @@
                     [self.activityIndicator stopAnimating];
                 }];
             } else {
-                NSLog(@"User registered successfully");
+                //NSLog(@"User registered successfully");
                 [self.activityIndicator stopAnimating];
                 [self performSegueWithIdentifier:@"loginSegue" sender:nil];
             }
@@ -88,7 +88,7 @@
                     [self.activityIndicator stopAnimating];
                 }];
             } else {
-                NSLog(@"User logged in successfully");
+                //NSLog(@"User logged in successfully");
                 [self.activityIndicator stopAnimating];
                 [self performSegueWithIdentifier:@"loginSegue" sender:nil];
             }

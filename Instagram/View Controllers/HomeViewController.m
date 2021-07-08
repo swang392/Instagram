@@ -40,12 +40,12 @@
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
     }];
     
-    SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+    SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    myDelegate.window.rootViewController = loginViewController;
+    LoginViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    sceneDelegate.window.rootViewController = controller;
 
-    NSLog(@"User logged out successfully");
+    //NSLog(@"User logged out successfully");
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
