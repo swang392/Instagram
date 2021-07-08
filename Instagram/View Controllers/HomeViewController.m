@@ -34,21 +34,18 @@
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     
     [self queryPosts];
-    
-    //query posts
 }
 
 - (IBAction)didTapLogout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
-        // PFUser.current() will now be nil
     }];
     
-    SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+    SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    myDelegate.window.rootViewController = loginViewController;
+    LoginViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    sceneDelegate.window.rootViewController = controller;
 
-    NSLog(@"User logged out successfully");
+    //NSLog(@"User logged out successfully");
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -63,13 +60,11 @@
 }
 
 - (void) queryPosts {
-    // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
     query.limit = 20;
 
-    // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
             self.posts = (NSMutableArray *)posts;
@@ -87,13 +82,12 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    PostDetailsViewController *postDetailsViewController = [segue destinationViewController];
-    postDetailsViewController.post = self.posts[indexPath.row];
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"detailsSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        PostDetailsViewController *postDetailsViewController = [segue destinationViewController];
+        postDetailsViewController.post = self.posts[indexPath.row];
+    }
 }
 
 
