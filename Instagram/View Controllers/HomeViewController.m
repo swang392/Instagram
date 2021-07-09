@@ -12,7 +12,6 @@
 #import "SceneDelegate.h"
 #import "PostCell.h"
 #import "PostDetailsViewController.h"
-
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
