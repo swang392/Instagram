@@ -36,6 +36,11 @@
     self.loginAlert = [UIAlertController alertControllerWithTitle:@"Error during user login." message:@"Please try again!" preferredStyle:(UIAlertControllerStyleAlert)];
     [self.loginAlert addAction:okAction];
 }
+
+- (IBAction)didTap:(id)sender {
+    [self.view endEditing:true];
+}
+
 - (IBAction)registerUser:(id)sender {
     [self.activityIndicator startAnimating];
     

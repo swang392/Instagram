@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,19 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="HrJ-XK-WOY">
-                                <rect key="frame" x="143" y="121" width="129" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InstagramLogo" translatesAutoresizingMaskIntoConstraints="NO" id="HrJ-XK-WOY">
+                                <rect key="frame" x="97" y="194" width="220" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="Slp-T0-Rex"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1UT-HP-gHk">
-                                <rect key="frame" x="64" y="433" width="130" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.58814483880996704" green="0.17802196741104126" blue="0.75153434276580811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1UT-HP-gHk">
+                                <rect key="frame" x="89" y="562" width="237" height="30"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -42,36 +45,10 @@
                                     <action selector="registerUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iqA-Iw-hVM"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A1Q-Xe-eGI">
-                                <rect key="frame" x="135" y="302" width="145" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                        <color key="value" red="0.94390982389450073" green="0.0" blue="0.48644989728927612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ktI-8b-ZRI">
-                                <rect key="frame" x="135" y="358" width="145" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                        <color key="value" red="0.94390982389450073" green="0.0" blue="0.48644989728927612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="L6m-o3-hEn">
-                                <rect key="frame" x="197" y="400" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhG-8F-NT3">
-                                <rect key="frame" x="219" y="433" width="130" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.58814483880996704" green="0.17802196741104126" blue="0.75153434276580811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhG-8F-NT3">
+                                <rect key="frame" x="89" y="512" width="237" height="30"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -84,9 +61,56 @@
                                     <action selector="loginUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gTP-8G-1SR"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ktI-8b-ZRI">
+                                <rect key="frame" x="72" y="408" width="270" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.94390982389450073" green="0.0" blue="0.48644989728927612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="L6m-o3-hEn">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A1Q-Xe-eGI">
+                                <rect key="frame" x="72" y="350" width="270" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.94390982389450073" green="0.0" blue="0.48644989728927612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ktI-8b-ZRI" firstAttribute="top" secondItem="A1Q-Xe-eGI" secondAttribute="bottom" constant="24" id="1dJ-ty-lKX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yhG-8F-NT3" secondAttribute="trailing" constant="88" id="3Oh-uI-y6Y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1UT-HP-gHk" secondAttribute="bottom" constant="270" id="7V7-Kv-cqD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1UT-HP-gHk" secondAttribute="trailing" constant="88" id="AFR-MQ-2FL"/>
+                            <constraint firstItem="1UT-HP-gHk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="89" id="CaE-d7-rI9"/>
+                            <constraint firstItem="HrJ-XK-WOY" firstAttribute="centerX" secondItem="A1Q-Xe-eGI" secondAttribute="centerX" id="Fho-yL-RzN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="L6m-o3-hEn" secondAttribute="trailing" constant="197" id="IJ9-iP-Vad"/>
+                            <constraint firstItem="L6m-o3-hEn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="197" id="Iw3-oQ-Qhn"/>
+                            <constraint firstItem="HrJ-XK-WOY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="NOG-7l-kbX"/>
+                            <constraint firstItem="A1Q-Xe-eGI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="72" id="NT3-ub-IfE"/>
+                            <constraint firstItem="HrJ-XK-WOY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="97" id="Shv-eF-RLK"/>
+                            <constraint firstItem="yhG-8F-NT3" firstAttribute="top" secondItem="ktI-8b-ZRI" secondAttribute="bottom" constant="70" id="b6Q-tC-XSS"/>
+                            <constraint firstItem="ktI-8b-ZRI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="72" id="czt-DO-8cw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ktI-8b-ZRI" secondAttribute="trailing" constant="72" id="idJ-Mb-MIf"/>
+                            <constraint firstItem="yhG-8F-NT3" firstAttribute="top" secondItem="L6m-o3-hEn" secondAttribute="bottom" constant="54" id="jBz-xr-Ize"/>
+                            <constraint firstItem="yhG-8F-NT3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="89" id="oXT-Wk-Bkc"/>
+                            <constraint firstItem="1UT-HP-gHk" firstAttribute="top" secondItem="yhG-8F-NT3" secondAttribute="bottom" constant="20" id="tCq-9J-Iui"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A1Q-Xe-eGI" secondAttribute="trailing" constant="72" id="upm-OL-MZT"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="JkM-HN-TYE" appends="YES" id="Wiw-EZ-YQR"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="L6m-o3-hEn" id="Fwx-Pd-Zh8"/>
@@ -96,6 +120,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="JkM-HN-TYE">
+                    <connections>
+                        <action selector="didTap:" destination="BYZ-38-t0r" id="d6e-jW-4lN"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="120.53571428571428"/>
         </scene>
@@ -234,11 +263,11 @@
             </objects>
             <point key="canvasLocation" x="2788" y="897"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="coy-ch-QMa">
             <objects>
                 <navigationController restorationIdentifier="HomeNavigationController" storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="R3A-m0-dFS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ieY-NF-bUl"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="feed_tab" id="ieY-NF-bUl"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="rTc-ik-qfE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hcC-dN-PYW">
@@ -377,11 +406,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon-60" width="60" height="60"/>
+        <image name="InstagramLogo" width="3300" height="936"/>
         <image name="bubble.right" catalog="system" width="128" height="110"/>
+        <image name="feed_tab" width="25" height="25"/>
         <image name="insta_camera_btn" width="25" height="25"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="suit.heart" catalog="system" width="128" height="109"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
