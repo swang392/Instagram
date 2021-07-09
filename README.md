@@ -57,7 +57,7 @@ Posting feature
 
 Home feed and post details
 
-<img src='https://i.imgur.com/GHE4m0C.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/QiXCalF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 GIF created with [Kap](https://getkap.co/).
