@@ -13,11 +13,12 @@
 #import "PostCell.h"
 #import "PostDetailsViewController.h"
 
-@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *posts;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (assign, nonatomic) BOOL morePostsLoading;
 
 @end
 
@@ -33,7 +34,7 @@
     [self.refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     
-    [self queryPosts];
+    [self queryPosts:20];
 }
 
 - (IBAction)didTapLogout:(id)sender {
@@ -44,8 +45,6 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LoginViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     sceneDelegate.window.rootViewController = controller;
-
-    //NSLog(@"User logged out successfully");
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -59,16 +58,17 @@
     return cell;
 }
 
-- (void) queryPosts {
+- (void) queryPosts:(int) numPosts {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
-    query.limit = 20;
+    query.limit = numPosts;
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
             self.posts = (NSMutableArray *)posts;
             [self.tableView reloadData];
+            self.morePostsLoading = false;
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
@@ -76,10 +76,31 @@
 }
 
 - (void)refreshData:(UIRefreshControl *)refreshControl {
-    [self queryPosts];
+    [self queryPosts:20];
     [refreshControl endRefreshing];
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if(!self.morePostsLoading){
+        int scrollViewContentHeight = self.tableView.contentSize.height;
+        int loadingThreshold = scrollViewContentHeight - self.tableView.bounds.size.height;
+
+        if(scrollView.contentOffset.y > loadingThreshold && self.tableView.isDragging) {
+            self.morePostsLoading = true;
+            PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+            [query countObjectsInBackgroundWithBlock:^(int count, NSError * _Nullable error) {
+                if (!error) {
+                    if (count > self.posts.count) {
+                        [self queryPosts:(self.posts.count+20)];
+                    }
+                } else {
+                    NSLog(@"Error loading more posts");
+                }
+            }];
+
+        }
+    }
+}
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
