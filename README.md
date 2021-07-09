@@ -48,7 +48,17 @@ Please list two areas of the assignment you'd like to **discuss further with you
 Here's a walkthrough of implemented user stories:
 
 User sign up, log in, and log out
+
 <img src='https://i.imgur.com/ToRlAH9.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Posting feature
+
+<img src='https://i.imgur.com/Ca7Jp9l.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Home feed and post details
+
+<img src='https://i.imgur.com/GHE4m0C.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 
 GIF created with [Kap](https://getkap.co/).
 
