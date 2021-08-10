@@ -69,7 +69,7 @@
             [self.tableView reloadData];
             self.morePostsLoading = false;
         } else {
-            NSLog(@"%@", error.localizedDescription);
+            //TODO: show error
         }
     }];
 }
@@ -92,15 +92,12 @@
                     if (count > self.posts.count) {
                         [self queryPosts:(self.posts.count+20)];
                     }
-                } else {
-                    NSLog(@"Error loading more posts");
                 }
             }];
 
         }
     }
 }
-#pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"detailsSegue"]) {
@@ -109,6 +106,5 @@
         postDetailsViewController.post = self.posts[indexPath.row];
     }
 }
-
 
 @end

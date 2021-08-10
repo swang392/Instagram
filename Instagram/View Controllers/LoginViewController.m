@@ -44,7 +44,7 @@
 - (IBAction)registerUser:(id)sender {
     [self.activityIndicator startAnimating];
     
-    if([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""])
+    if ([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""])
     {
         [self presentViewController:self.blankAlert animated:YES completion:^{
             [self.activityIndicator stopAnimating];
@@ -64,7 +64,6 @@
                     [self.activityIndicator stopAnimating];
                 }];
             } else {
-                //NSLog(@"User registered successfully");
                 [self.activityIndicator stopAnimating];
                 [self performSegueWithIdentifier:@"loginSegue" sender:nil];
             }
@@ -75,7 +74,7 @@
 - (IBAction)loginUser:(id)sender {
     [self.activityIndicator startAnimating];
     
-    if([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""])
+    if ([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""])
     {
         [self presentViewController:self.blankAlert animated:YES completion:^{
             [self.activityIndicator stopAnimating];
@@ -93,7 +92,6 @@
                     [self.activityIndicator stopAnimating];
                 }];
             } else {
-                //NSLog(@"User logged in successfully");
                 [self.activityIndicator stopAnimating];
                 [self performSegueWithIdentifier:@"loginSegue" sender:nil];
             }

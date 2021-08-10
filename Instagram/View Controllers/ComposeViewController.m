@@ -37,18 +37,14 @@
     imagePickerVC.allowsEditing = YES;
     imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 
-    // The Xcode simulator does not support taking pictures, so let's first check that the camera is indeed supported on the device before trying to present it.
     if(canTakePhoto){
-        //TODO: add option if cantakePhoto
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
             imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-        }
-        else {
-            NSLog(@"Camera 🚫 available so we will use photo library instead");
         }
     }
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
+
    //method from codepath
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
@@ -82,13 +78,9 @@
 
     [Post postUserImage:imageToPost withCaption:captionToPost withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded){
-            NSLog(@"posted image successfuly");
             [self dismissViewControllerAnimated:true completion:nil];
         }
-        else{
-            NSLog(@"Error posting: %@", error.localizedDescription);
-        }
-    }];;
+    }];
     [self.navigationController popViewControllerAnimated:TRUE];
 }
 

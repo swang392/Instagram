@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self refreshData];
 }
 
@@ -34,10 +35,5 @@
     self.usernameLabel.text = self.post.author.username;
     self.createdAtLabel.text = self.post.createdAt.shortTimeAgoSinceNow;
 }
-- (IBAction)likeButtonTapped:(id)sender {
-    //will do this later. right now its just for style
-}
-- (IBAction)commentButtonTapped:(id)sender {
-    //will do this later. right now its just for style
-}
+
 @end
